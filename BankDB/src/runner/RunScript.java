@@ -17,6 +17,6 @@ public class RunScript {
 //		obj1.setid(1001);
 //		int id = obj1.getid();
 //		obj1.setdue(1001);
-//		int due = obj1.getdue();
+//		int due = obj1.getdue();		
 	}
 }
