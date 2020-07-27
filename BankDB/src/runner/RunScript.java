@@ -51,7 +51,7 @@ public class RunScript {
 		simpleInterest obj2 = new simpleInterest();
 		interest1 obj3 = new interest1();
 		interest2 obj4 = new interest2();
-		PersonalLoan vl = new PersonalLoan();
+		PersonalLoan v1 = new PersonalLoan();
 		HomeLoan v2 = new HomeLoan();
 		CarLoan v3 = new CarLoan();
 		obj1.setname("Kiran");
@@ -59,17 +59,28 @@ public class RunScript {
 		System.out.println("Customer Name : "+ name);
 		obj1.setid(1001);
 		int id = obj1.getid();
-		obj1.setdue(16);
+		obj1.setdue(14);
  		int due = obj1.getdue();
  		String Eligibility = EligibilityforLoan(id);
+ 		System.out.println("Eligible for: " +  Eligibility);
  		int SI = 0;
+ 		int Loan_amount = 0;
  		switch(Eligibility) {
  			case "Personal Loan":
  				SI = obj2.interest(1000, 10, 10);
+ 				Loan_amount = v1.loan(SI, due);
+ 				System.out.println("Loan Amount Sanctioned - \nName: " + name + "\nID: " + id + "\nLoan Amount: " + Loan_amount + "\nInterest: " + SI);
+ 				break;
  			case "Car Loan":
  				SI = obj3.interest(1100, 10, 12);
+ 				Loan_amount = v2.loan(SI, due);
+ 				System.out.println("Loan Amount Sanctioned - \nName: " + name + "\nID: " + id + "\nLoan Amount: " + Loan_amount + "\nInterest: " + SI);
+ 				break; 			
  			case "Home Loan":
  				SI = obj4.interest(1100, 10, 12, due);
+ 				Loan_amount = v3.loan(SI, due);
+ 				System.out.println("Loan Amount Sanctioned - \nName: " + name + "\nID: " + id + "\nLoan Amount: " + Loan_amount + "\nInterest: " + SI);
+ 				break;
  		} 		
 	}
 }

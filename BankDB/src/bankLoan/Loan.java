@@ -1,5 +1,5 @@
 package bankLoan;
 
 abstract class Loan {	
-	abstract public void loan();
+	abstract public int loan(int SI, int Due);
 }
